@@ -1,9 +1,11 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.caracteres;
+
+import com.iteso.nintendo.NintendoCharacter;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Mario extends NintendoCharacter{
+public class Mario extends NintendoCharacter {
 
     public Mario(){
         setCurrentPower("normal");
@@ -26,6 +28,7 @@ public class Mario extends NintendoCharacter{
         return "jump";
     }
 
+    /*
     @Override
     public String performBButtonAction() {
         if (getCurrentPower() == "fire")
@@ -34,11 +37,14 @@ public class Mario extends NintendoCharacter{
             return "dash";
         else if (getCurrentPower() == "normal")
             return "nothing";
+        else if (getCurrentPower() == "big mario")
+            return "Super strong";
         else
             return "error";
     }
+    */
 
-    @Override
+/*
     public void setPower(String powerItem) {
         if (getCurrentPower().toLowerCase() != "normal") {
             return;
@@ -46,6 +52,7 @@ public class Mario extends NintendoCharacter{
 
         else if(powerItem.toLowerCase() == "flower"){
             setCurrentPower("fire");
+            setSpeed("normal");
         }
         else if(powerItem.toLowerCase() == "star"){
             setCurrentPower("invincibility");
@@ -55,7 +62,12 @@ public class Mario extends NintendoCharacter{
             setCurrentPower("normal");
             setSpeed("normal");
         }
+        else if(powerItem.toLowerCase() == "hongo"){
+            setCurrentPower("big mario");
+            setSpeed("normal");
+        }
         else
             setCurrentPower("error");
     }
+    */
 }

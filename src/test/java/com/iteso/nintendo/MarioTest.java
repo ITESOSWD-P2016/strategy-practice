@@ -1,6 +1,11 @@
 package com.iteso.nintendo;
 
-import com.iteso.nintendo.Mario;
+import com.iteso.nintendo.Powers.iPower;
+import com.iteso.nintendo.Powers.impl.Flower;
+import com.iteso.nintendo.Powers.impl.Hongo;
+import com.iteso.nintendo.Powers.impl.Normal;
+import com.iteso.nintendo.Powers.impl.Star;
+import com.iteso.nintendo.caracteres.Mario;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -18,45 +23,68 @@ public class MarioTest {
 
     @Test
     public void testPowerWhenMarioTakesAFlower(){
-        mario.setPower("flower");
+        iPower power = new Flower();
+        mario.setPower(power);
 
         assertEquals("fire",mario.getCurrentPower());
     }
 
     @Test
     public void testBActionWhenMarioTakesAFlower(){
-        mario.setPower("flower");
+        iPower power = new Flower();
+        mario.setPower(power);
 
         assertEquals("fireball",mario.performBButtonAction());
     }
 
     @Test
     public void testPowerWhenMarioTakesAStar(){
-        mario.setPower("star");
+        iPower power = new Star();
+        mario.setPower(power);
 
         assertEquals("invincibility",mario.getCurrentPower());
     }
 
     @Test
     public void testBActionWhenMarioTakesAStar(){
-        mario.setPower("star");
+        iPower power = new Star();
+        mario.setPower(power);
 
         assertEquals("dash",mario.performBButtonAction());
     }
 
     @Test
+    public void testPowerWhenMarioTakesAHongo(){
+        iPower power = new Hongo();
+        mario.setPower(power);
+
+        assertEquals("big mario",mario.getCurrentPower());
+    }
+
+    @Test
+    public void testBActionWhenMarioTakesAHongo(){
+        iPower power = new Hongo();
+        mario.setPower(power);
+
+        assertEquals("Super strong",mario.performBButtonAction());
+    }
+
+    @Test
     public void testPowerWhenMarioIsNormal(){
-        mario.setPower("clear power");
+        iPower power = new Normal();
+        mario.setPower(power);
 
         assertEquals("normal",mario.getCurrentPower());
     }
 
     @Test
     public void testBActionWhenMarioIsNormal(){
-        mario.setPower("clear power");
+        iPower power = new Normal();
+        mario.setPower(power);
 
         assertEquals("nothing",mario.performBButtonAction());
     }
+/*
     @Test
     public void testPowerWhenError(){
         mario.setPower("invalid");
@@ -70,5 +98,5 @@ public class MarioTest {
 
         assertEquals("error",mario.performBButtonAction());
     }
-
+*/
 }
