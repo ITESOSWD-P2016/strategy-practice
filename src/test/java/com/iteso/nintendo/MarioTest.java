@@ -1,8 +1,13 @@
 package com.iteso.nintendo;
 
-import com.iteso.nintendo.Mario;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.iteso.nintendo.character.Mario;
+import com.iteso.nintendo.power.impl.FlowerPower;
+import com.iteso.nintendo.power.impl.NormalPower;
+import com.iteso.nintendo.power.impl.StarPower;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -18,56 +23,49 @@ public class MarioTest {
 
     @Test
     public void testPowerWhenMarioTakesAFlower(){
-        mario.setPower("flower");
-
-        assertEquals("fire",mario.getCurrentPower());
+        mario.setPower(new FlowerPower());
+        assertEquals("fire",mario.getPowerName());
     }
 
     @Test
     public void testBActionWhenMarioTakesAFlower(){
-        mario.setPower("flower");
-
+    	mario.setPower(new FlowerPower());
         assertEquals("fireball",mario.performBButtonAction());
     }
 
     @Test
     public void testPowerWhenMarioTakesAStar(){
-        mario.setPower("star");
-
-        assertEquals("invincibility",mario.getCurrentPower());
+    	mario.setPower(new StarPower());
+        assertEquals("invincibility",mario.getPowerName());
     }
 
     @Test
     public void testBActionWhenMarioTakesAStar(){
-        mario.setPower("star");
-
+    	mario.setPower(new StarPower());
         assertEquals("dash",mario.performBButtonAction());
     }
 
     @Test
     public void testPowerWhenMarioIsNormal(){
-        mario.setPower("clear power");
-
-        assertEquals("normal",mario.getCurrentPower());
+    	mario.setPower(new NormalPower());
+        assertEquals("normal",mario.getPowerName());
     }
 
     @Test
     public void testBActionWhenMarioIsNormal(){
-        mario.setPower("clear power");
-
+    	mario.setPower(new NormalPower());
         assertEquals("nothing",mario.performBButtonAction());
     }
-    @Test
+    
+    @Test (expected = NullPointerException.class)
     public void testPowerWhenError(){
-        mario.setPower("invalid");
-
-        assertEquals("error",mario.getCurrentPower());
+    	mario.setPower(null);
+        assertEquals("error",mario.getPowerName());
     }
 
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testBActionWhenError(){
-        mario.setPower("invalid");
-
+    	mario.setPower(null);
         assertEquals("error",mario.performBButtonAction());
     }
 

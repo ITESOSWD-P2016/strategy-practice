@@ -3,6 +3,11 @@ package com.iteso.nintendo;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.iteso.nintendo.character.Luigi;
+import com.iteso.nintendo.power.impl.FlowerPower;
+import com.iteso.nintendo.power.impl.NormalPower;
+import com.iteso.nintendo.power.impl.StarPower;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -18,57 +23,49 @@ public class LuigiTest {
 
     @Test
     public void testPowerWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fire", luigi.getCurrentPower());
+        luigi.setPower(new FlowerPower());
+        assertEquals("fire",luigi.getPowerName());
     }
 
     @Test
     public void testBActionWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fireball", luigi.performBButtonAction());
+    	luigi.setPower(new FlowerPower());
+        assertEquals("fireball",luigi.performBButtonAction());
     }
 
     @Test
     public void testPowerWhenLuigiTakesAStar(){
-        luigi.setPower("star");
-
-        assertEquals("invincibility", luigi.getCurrentPower());
+    	luigi.setPower(new StarPower());
+        assertEquals("invincibility",luigi.getPowerName());
     }
 
     @Test
     public void testBActionWhenLuigiTakesAStar(){
-        luigi.setPower("star");
-
-        assertEquals("dash", luigi.performBButtonAction());
+    	luigi.setPower(new StarPower());
+        assertEquals("dash",luigi.performBButtonAction());
     }
 
     @Test
     public void testPowerWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("normal", luigi.getCurrentPower());
+    	luigi.setPower(new NormalPower());
+        assertEquals("normal",luigi.getPowerName());
     }
 
     @Test
     public void testBActionWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("nothing", luigi.performBButtonAction());
+    	luigi.setPower(new NormalPower());
+        assertEquals("nothing",luigi.performBButtonAction());
     }
-    @Test
+    
+    @Test (expected = NullPointerException.class)
     public void testPowerWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.getCurrentPower());
+    	luigi.setPower(null);
+        assertEquals("error",luigi.getPowerName());
     }
 
-    @Test
+    @Test (expected = NullPointerException.class)
     public void testBActionWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.performBButtonAction());
+    	luigi.setPower(null);
+        assertEquals("error",luigi.performBButtonAction());
     }
-
 }
