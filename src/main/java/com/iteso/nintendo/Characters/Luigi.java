@@ -1,4 +1,4 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.Characters;
 
 /**
  * Created by rvillalobos on 3/3/16.

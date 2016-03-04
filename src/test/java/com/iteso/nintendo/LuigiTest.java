@@ -1,5 +1,7 @@
 package com.iteso.nintendo;
 
+import com.iteso.nintendo.Characters.Luigi;
+import com.iteso.nintendo.Powers.impl.FlowerPower;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +20,7 @@ public class LuigiTest {
 
     @Test
     public void testPowerWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
+        luigi.setPower(new FlowerPower());
 
         assertEquals("fire", luigi.getCurrentPower());
     }
