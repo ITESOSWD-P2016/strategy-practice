@@ -1,9 +1,11 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.characters;
+
+import com.iteso.nintendo.characters.NintendoCharacter;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Luigi extends NintendoCharacter{
+public class Luigi extends NintendoCharacter {
 
     public Luigi(){
         setCurrentPower("normal");
@@ -34,28 +36,9 @@ public class Luigi extends NintendoCharacter{
             return "dash";
         else if (getCurrentPower() == "normal")
             return "nothing";
+        else if (getCurrentPower() == "bigluigi")
+            return "break bricks";
         else
             return "error";
-    }
-
-    @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
-            return;
-        }
-
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
-        }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
-            setSpeed("fast");
-        }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
-            setSpeed("normal");
-        }
-        else
-            setCurrentPower("error");
     }
 }
