@@ -2,7 +2,7 @@ target/
 .idea
 *.iml
 *.eml
-*.java
+*.class
 .classpath
 .project
 *.libraries
