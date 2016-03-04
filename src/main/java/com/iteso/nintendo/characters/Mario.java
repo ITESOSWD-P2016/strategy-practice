@@ -1,13 +1,13 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.characters;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Luigi extends NintendoCharacter{
+public class Mario extends NintendoCharacter{
 
-    public Luigi(){
+    public Mario(){
         setCurrentPower("normal");
-        setName("Luigi ");
+        setName("Mario");
         setSpeed("normal");
     }
 
@@ -34,28 +34,11 @@ public class Luigi extends NintendoCharacter{
             return "dash";
         else if (getCurrentPower() == "normal")
             return "nothing";
+        else if (getCurrentPower() == "giant")
+            return "superstrength";
         else
             return "error";
     }
 
-    @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
-            return;
-        }
-
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
-        }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
-            setSpeed("fast");
-        }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
-            setSpeed("normal");
-        }
-        else
-            setCurrentPower("error");
-    }
+ 
 }
