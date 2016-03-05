@@ -1,6 +1,6 @@
 package com.iteso.nintendo;
 
-import com.iteso.nintendo.Mario;
+import com.iteso.nintendo.Characters.Mario;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
