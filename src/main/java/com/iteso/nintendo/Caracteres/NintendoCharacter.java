@@ -1,5 +1,5 @@
-package com.iteso.nintendo;
-
+package com.iteso.nintendo.Caracteres;
+import com.iteso.nintendo.powers.iPower;
 /**
  * Created by rvillalobos on 3/3/16.
  */
@@ -30,7 +30,10 @@ public abstract class NintendoCharacter {
     public abstract String performAButtonAction();
     public abstract String performBButtonAction();
 
-    public abstract void setPower(String powerItem);
+    public abstract void setPower(String powerItem);{
+    this.power=powerItem;
+    setCurrentPower(this.power.getPowerName());
+}
 
 
     public String getCurrentPower() {
@@ -41,3 +44,5 @@ public abstract class NintendoCharacter {
         this.currentPower = currentPower;
     }
 }
+
+
