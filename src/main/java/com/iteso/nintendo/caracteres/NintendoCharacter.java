@@ -6,9 +6,11 @@ import com.iteso.nintendo.powers.IPower;
  * Created by rvillalobos on 3/3/16.
  */
 public abstract class NintendoCharacter {
-      private String speed = null;
-      private String name = null;
-      private String currentPower = null;
+    private String speed = null;
+    private String name = null;
+    private String currentPower = null;
+    private IPower power;
+
 
 
     public String getSpeed() {
@@ -22,6 +24,9 @@ public abstract class NintendoCharacter {
     public String getName() {
         return name;
     }
+    public String getAction() {
+        return power.getAction();
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -32,14 +37,18 @@ public abstract class NintendoCharacter {
     public abstract String performAButtonAction();
     public abstract String performBButtonAction();
 
-    public abstract void setPower(String powerItem);
+
+    public void setPower(IPower powerItem) {
+        this.power=powerItem;
+        setCurrentPower(this.power.getPowerName());
+    }
 
 
     public String getCurrentPower() {
         return currentPower;
     }
 
-    public void setCurrentPower(IPower poweritem) {
+    public void setCurrentPower(String currentPower) {
         this.currentPower = currentPower;
     }
 }

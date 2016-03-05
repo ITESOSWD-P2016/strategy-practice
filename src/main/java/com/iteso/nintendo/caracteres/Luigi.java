@@ -1,16 +1,20 @@
 package com.iteso.nintendo.caracteres;
 
-import com.iteso.nintendo.NintendoCharacter;
+
+import com.iteso.nintendo.powers.impl.NormalPower;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
 public class Luigi extends NintendoCharacter {
 
+    public static void main (String[] args){
+        NintendoCharacter luigi = new Luigi();
+        System.out.println(luigi.getCurrentPower());
+    }
+
     public Luigi(){
-        setCurrentPower("normal");
-        setName("Luigi ");
-        setSpeed("normal");
+        this.setPower(new NormalPower());
     }
 
     @Override
@@ -30,41 +34,6 @@ public class Luigi extends NintendoCharacter {
 
     @Override
     public String performBButtonAction() {
-        if (getCurrentPower() == "fire")
-            return "fireball";
-        else if (getCurrentPower() == "invincibility")
-            return "dash";
-        else if (getCurrentPower() == "normal")
-            return "nothing";
-        else if (getCurrentPower() == "big")
-            return "breakbrick";
-        else
-            return "error";
-
-    }
-
-    @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
-            return;
-        }
-
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
-        }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
-            setSpeed("fast");
-        }
-        else if(powerItem.toLowerCase() == "mushroom"){
-            setCurrentPower("big");
-            setSpeed("normal");
-        }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
-            setSpeed("normal");
-        }
-        else
-            setCurrentPower("error");
+        return this.getAction();
     }
 }
