@@ -16,4 +16,8 @@ public class FlowerPower implements iPower {
 		return "fire";
 	}
 
+	public String getSpecialAction() {
+		return "throw fireballs";
+	}
+
 }

@@ -1,24 +1,24 @@
 package com.iteso.nintendo.power.impl;
 
+import com.iteso.nintendo.power.iHitSpecialPower;
 import com.iteso.nintendo.power.iPower;
 
-public class StarPower implements iPower{
+public class TouchPower implements iPower, iHitSpecialPower {
 
 	public String getAction() {
-		return "dash";
+		return "knock";
 	}
 
 	public String getSpeed() {
-		return "fast";
+		return "normal";
 	}
 
 	public String getPowerName() {
-		return "invincibility";
+		return "super strength";
 	}
 
 	public String getSpecialAction() {
-		return "jump higher";
+		return "kill character";
 	}
-
 
 }

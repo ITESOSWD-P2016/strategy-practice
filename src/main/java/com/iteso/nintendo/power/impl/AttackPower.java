@@ -1,11 +1,12 @@
 package com.iteso.nintendo.power.impl;
 
 import com.iteso.nintendo.power.iPower;
+import com.iteso.nintendo.power.iSlideSpecialPower;
 
-public class StarPower implements iPower{
+public class AttackPower implements iPower, iSlideSpecialPower {
 
 	public String getAction() {
-		return "dash";
+		return "slice";
 	}
 
 	public String getSpeed() {
@@ -13,12 +14,11 @@ public class StarPower implements iPower{
 	}
 
 	public String getPowerName() {
-		return "invincibility";
+		return "attack";
 	}
 
 	public String getSpecialAction() {
-		return "jump higher";
+		return "kill";
 	}
-
 
 }

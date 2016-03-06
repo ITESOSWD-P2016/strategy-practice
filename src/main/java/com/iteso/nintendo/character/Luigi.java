@@ -1,5 +1,7 @@
 package com.iteso.nintendo.character;
 
+import javax.naming.directory.InvalidAttributesException;
+
 import com.iteso.nintendo.power.impl.NormalPower;
 
 /**
@@ -7,7 +9,7 @@ import com.iteso.nintendo.power.impl.NormalPower;
  */
 public class Luigi extends NintendoCharacter{
 
-    public Luigi(){
+    public Luigi() throws InvalidAttributesException{
     	this.setPower(new NormalPower());
     }
 
@@ -23,11 +25,8 @@ public class Luigi extends NintendoCharacter{
 
     @Override
     public String performAButtonAction() {
+    	if (!this.getPowerName().equals("normal"))
+    		return super.performAButtonAction();
         return "jump";
-    }
-
-    @Override
-    public String performBButtonAction() {
-        return this.getCurrentPower();
     }
 }

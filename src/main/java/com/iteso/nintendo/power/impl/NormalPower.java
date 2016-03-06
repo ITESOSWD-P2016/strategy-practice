@@ -16,4 +16,8 @@ public class NormalPower implements iPower {
 		return "normal";
 	}
 
+	public String getSpecialAction() {
+		return "nothing";
+	}
+
 }

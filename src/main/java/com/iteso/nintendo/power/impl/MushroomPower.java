@@ -16,4 +16,8 @@ public class MushroomPower implements iPower {
 		return "giant";
 	}
 
+	public String getSpecialAction() {
+		return "break blocks";
+	}
+
 }
