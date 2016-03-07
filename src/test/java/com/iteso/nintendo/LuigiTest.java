@@ -66,22 +66,32 @@ public class LuigiTest {
         assertEquals("nothing", luigi.performBButtonAction());
     }
 
-    @Rule
-    public final ExpectedException exception = ExpectedException.none();
+    @Test(expected=NullPointerException.class)
+    public void testPowerWhenError(){
+        luigi.setPower(null);
+
+        assertEquals("error", luigi.getCurrentPower());
+    }
+
     @Test(expected = NullPointerException.class)
     public void testBActionWhenError(){
         luigi.setPower(null);
 
-        assertEquals("break bricks",luigi.performBButtonAction());
+        assertEquals("error",luigi.performBButtonAction());
 
     }
 
-
     @Test
-    public void testPowerActionWhenLuigiIsBig() {
+    public void testBActionWhenLuigiIsBig() {
         luigi.setPower(new MushroomPower());
 
-        assertEquals("error", luigi.performBButtonAction());
+        assertEquals("break bricks", luigi.performBButtonAction());
+    }
+
+    @Test
+    public void testPowerWhenLuigiIsBig(){
+        luigi.setPower(new MushroomPower());
+        assertEquals("giant", luigi.getCurrentPower());
     }
 
 

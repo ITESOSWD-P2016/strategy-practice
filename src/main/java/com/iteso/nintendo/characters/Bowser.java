@@ -1,16 +1,14 @@
 package com.iteso.nintendo.characters;
 
-import com.iteso.nintendo.characters.NintendoCharacter;
-
 /**
- * Created by rvillalobos on 3/3/16.
+ * Created by Sebastian on 06/03/16.
  */
-public class Luigi extends NintendoCharacter {
+public class Bowser extends NintendoCharacter{
 
-    public Luigi(){
+    public Bowser() {
         setCurrentPower("normal");
-        setName("Luigi ");
-        setSpeed("normal");
+        setName("Bowser");
+        setSpeed("slow");
     }
 
     @Override
@@ -38,6 +36,9 @@ public class Luigi extends NintendoCharacter {
             return "nothing";
         else if (getCurrentPower() == "giant")
             return "break bricks";
+        else if (getCurrentPower() == "flames")
+            return "flamethrower";
+
         else
             return "error";
     }

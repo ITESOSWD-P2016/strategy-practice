@@ -36,7 +36,7 @@ public class Mario extends NintendoCharacter {
             return "dash";
         else if (getCurrentPower() == "normal")
             return "nothing";
-        else if (getCurrentPower() == "bigmario")
+        else if (getCurrentPower() == "giant")
             return "break bricks";
         else
             return "error";
