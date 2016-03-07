@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.iteso.nintendo.characters.Luigi;
+import com.iteso.nintendo.powers.impl.FloatPower;
 import com.iteso.nintendo.powers.impl.FlowerPower;
 import com.iteso.nintendo.powers.impl.MushroomPower;
 import com.iteso.nintendo.powers.impl.NormalPower;
@@ -37,6 +38,13 @@ public class LuigiTest {
 
         assertEquals("fireball", luigi.performBButtonAction());
     }
+    @Test
+    public void testAActionWhenLuigiTakesAFlower(){
+        luigi.setPower(new FlowerPower());
+
+        assertEquals("open door", luigi.performAButtonAction());
+    }
+    
 
     @Test
     public void testPowerWhenLuigiTakesAStar(){
@@ -51,6 +59,13 @@ public class LuigiTest {
 
         assertEquals("dash", luigi.performBButtonAction());
     }
+    @Test
+    public void testAActionWhenLuigiTakesAStar(){
+        luigi.setPower(new StarPower());
+
+        assertEquals("open door", luigi.performAButtonAction());
+    }
+    
 
     @Test
     public void testPowerWhenLuigiTakesAMushroom(){
@@ -65,6 +80,13 @@ public class LuigiTest {
 
         assertEquals("superstrength", luigi.performBButtonAction());
     }
+    @Test
+    public void testAActionWhenLuigiTakesAMushroom(){
+        luigi.setPower(new MushroomPower());
+
+        assertEquals("open door", luigi.performAButtonAction());
+    }
+    
     
     @Test
     public void testPowerWhenLuigiIsNormal(){
@@ -80,6 +102,21 @@ public class LuigiTest {
         assertEquals("nothing", luigi.performBButtonAction());
     }
     
+    @Test
+    public void testAActionWhenLuigiIsNormal(){
+        luigi.setPower(new NormalPower());
+
+        assertEquals("open door", luigi.performAButtonAction());
+    }
+    
+    @Test
+    public void testPowerWhenLuigiWantsExclusivePower(){
+        luigi.setPower(new FloatPower());
+
+        assertEquals("error", luigi.performBButtonAction());
+    }
+    
+    
     @Test(expected = NullPointerException.class)
     public void testPowerWhenError(){
         luigi.setPower(null);
@@ -92,6 +129,13 @@ public class LuigiTest {
         luigi.setPower(null);
 
         assertEquals("error", luigi.performBButtonAction());
+    }
+    
+    @Test(expected = NullPointerException.class)
+    public void testAActionWhenError(){
+        luigi.setPower(null);
+
+        assertEquals("error", luigi.performAButtonAction());
     }
 
 }

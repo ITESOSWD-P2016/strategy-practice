@@ -64,6 +64,7 @@ public class MarioTest {
         assertEquals("nothing",mario.performBButtonAction());
     }
     
+    @Test
     public void testPowerWhenMarioTakesAMushroom(){
         mario.setPower(new MushroomPower());
 

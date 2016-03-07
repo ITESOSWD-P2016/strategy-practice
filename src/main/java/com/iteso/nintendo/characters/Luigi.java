@@ -21,23 +21,5 @@ public class Luigi extends NintendoCharacter{
         return null;
     }
 
-    @Override
-    public String performAButtonAction() {
-        return "jump";
-    }
-
-    @Override
-    public String performBButtonAction() {
-        if (getCurrentPower() == "fire")
-            return "fireball";
-        else if (getCurrentPower() == "invincibility")
-            return "dash";
-        else if (getCurrentPower() == "normal")
-            return "nothing";
-        else if (getCurrentPower() == "giant")
-            return "superstrength";
-        else
-            return "error";
-    }
 
 }

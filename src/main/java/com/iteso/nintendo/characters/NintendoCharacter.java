@@ -30,8 +30,24 @@ public abstract class NintendoCharacter {
 
     public abstract String performXButtonAction();
     public abstract String performYButtonAction();
-    public abstract String performAButtonAction();
-    public abstract String performBButtonAction();
+    
+    public String performAButtonAction(){
+    	return "open door";
+    }
+    
+    public String performBButtonAction(){
+    	if (getCurrentPower() == "fire")
+            return "fireball";
+        else if (getCurrentPower() == "invincibility")
+            return "dash";
+        else if (getCurrentPower() == "normal")
+            return "nothing";
+        else if (getCurrentPower() == "giant")
+            return "superstrength";
+        else
+        	return "error";
+    	
+    }
 
     public void setPower(iPower powerItem) {
     	this.power=powerItem;
