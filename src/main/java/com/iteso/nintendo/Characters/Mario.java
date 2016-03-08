@@ -26,7 +26,7 @@ public class Mario extends NintendoCharacter {
 
     @Override
     public String performAButtonAction() {
-        return "jump";
+        return this.getCurrentJump();
     }
 
     @Override

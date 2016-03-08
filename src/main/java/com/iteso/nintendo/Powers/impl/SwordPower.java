@@ -5,7 +5,7 @@ import com.iteso.nintendo.Powers.iPower;
 /**
  * Created by lnvitado on 04/03/2016.
  */
-public class StarPower  implements iPower {
+public class SwordPower implements iPower {
 
     public boolean canGetPower() {
         String character = null;
@@ -14,42 +14,40 @@ public class StarPower  implements iPower {
 
         //System.out.println(character + "whocalled?");
 
-        boolean isMario = character.matches(".*Mario.*");
-        boolean isLuigi = character.matches(".*Luigi.*");
-        boolean isKirby = character.matches(".*Kirby.*");
         boolean isLink = character.matches(".*Link.*");
 
-        if(isMario||isLuigi||isKirby||isLink)
+        if(isLink)
             return true;
         else
             return false;
     }
+
     public String getActionA() {
         if(this.canGetPower())
-            return "dash jump";
+            return "jump slash";
         else
             return "Can't get this power";
     }
 
     public String getActionB() {
         if(this.canGetPower())
-            return "dash";
+            return "sword slash";
         else
             return "Can't get this power";
     }
 
     public String getSpeed() {
         if(this.canGetPower())
-            return "fast";
+            return "normal";
         else
             return "Can't get this power";
     }
 
     public String getPowerName() {
         if(this.canGetPower())
-            return "invincibility";
+            return "swordsmanship";
         else
             return "Can't get this power";
     }
-
 }
+

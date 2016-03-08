@@ -5,8 +5,11 @@ package com.iteso.nintendo.Powers;
  */
 public interface iPower {
 
-    public String getAction();
-    public String getSpeed();
-    public String getPowerName();
+    String getActionA();
+    String getActionB();
+    String getSpeed();
+    String getPowerName();
+
+    boolean canGetPower();
 
 }

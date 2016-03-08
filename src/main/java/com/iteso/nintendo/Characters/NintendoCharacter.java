@@ -12,19 +12,21 @@ public abstract class NintendoCharacter {
     private String CharName = null;
     private String PowerName = null;
     private String currentPower = null;
+    private String currentJump = null;
     private String speed = null;
 
     private iPower power;
-
 
 ///////////////////// Setters /////////////////////
 
     public void setPower(iPower powerItem){
         this.power = powerItem;
         setPowerName(this.power.getPowerName());
-        setCurrentPower(this.power.getAction());
+        setCurrentJump(this.power.getActionA());
+        setCurrentPower(this.power.getActionB());
         setSpeed(this.power.getSpeed());
     }
+
 
     public void setCharName(String CharName) {
         this.CharName = CharName;
@@ -32,6 +34,10 @@ public abstract class NintendoCharacter {
 
     public void setPowerName(String PowerName){
         this.PowerName = PowerName;
+    }
+
+    public void setCurrentJump(String currentJump){
+        this.currentJump = currentJump;
     }
 
     public void setCurrentPower(String currentPower){
@@ -56,6 +62,10 @@ public abstract class NintendoCharacter {
         return currentPower;
     }
 
+    public String getCurrentJump() {
+        return currentJump;
+    }
+
     public String getSpeed() {
         return speed;
     }
@@ -69,11 +79,13 @@ public abstract class NintendoCharacter {
     public abstract String performYButtonAction();
 
 // A
-    public abstract String performAButtonAction();
+    public String performAButtonAction(){
+        return power.getActionB();
+    }
 
 // B
     public String performBButtonAction(){
-        return power.getAction();
+        return power.getActionB();
     }
 
 ///////////////////////////////////////////////////

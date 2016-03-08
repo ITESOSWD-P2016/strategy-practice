@@ -1,17 +1,13 @@
+
 package com.iteso.nintendo.Characters;
 
-import com.iteso.nintendo.Characters.NintendoCharacter;
-import com.iteso.nintendo.Powers.iPower;
-import com.iteso.nintendo.Powers.impl.NormalPower;
+import com.iteso.nintendo.Powers.impl.InhalePower;
 
-/**
- * Created by rvillalobos on 3/3/16.
- */
-public class Luigi extends NintendoCharacter {
 
-    public Luigi(){
-        setCharName("Luigi");
-        this.setPower(new NormalPower());
+public class Kirby extends NintendoCharacter{
+    public Kirby(){
+        setCharName("Kirby");
+        this.setPower(new InhalePower());
     }
 
     @Override
@@ -33,6 +29,5 @@ public class Luigi extends NintendoCharacter {
     public String performBButtonAction() {
         return this.getCurrentPower();
     }
-
-
 }
+
