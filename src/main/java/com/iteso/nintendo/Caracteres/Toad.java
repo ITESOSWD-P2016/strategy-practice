@@ -1,17 +1,11 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.Caracteres;
+import com.iteso.nintendo.Caracteres.*;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Created by Flaveyro´sDell on 07/03/2016.
  */
-public class Luigi extends NintendoCharacter{
+public class Toad extends NintendoCharacter{
 
-    public Luigi(){
-        setCurrentPower("normal");
-        setName("Luigi ");
-        setSpeed("normal");
-    }
-
-    @Override
     public String performXButtonAction() {
         return null;
     }
@@ -23,7 +17,16 @@ public class Luigi extends NintendoCharacter{
 
     @Override
     public String performAButtonAction() {
-        return "jump";
+        if (getCurrentPower() == "fire")
+            return "fireball";
+        else if (getCurrentPower() == "invincibility")
+            return "dash";
+        else if (getCurrentPower() == "normal")
+            return "nothing";
+        else if (getCurrentPower() == "giant")
+            return "superstrength";
+        return "error";
+
     }
 
     @Override
@@ -34,6 +37,13 @@ public class Luigi extends NintendoCharacter{
             return "dash";
         else if (getCurrentPower() == "normal")
             return "nothing";
+
+        else if (getCurrentPower() == "Explosion")
+            return "Explote";
+        else if(getCurrentPower() == "hipnotist")
+            return "Control Enemy";
+
+
         else
             return "error";
     }
@@ -55,7 +65,16 @@ public class Luigi extends NintendoCharacter{
             setCurrentPower("normal");
             setSpeed("normal");
         }
+        else if(powerItem.toLowerCase()=="BombSoul"){
+            setCurrentPower("Explosive");
+            setSpeed("normal");
+        }
+        else if(powerItem.toLowerCase()=="hipnotist"){
+            setCurrentPower("Control Enemy");
+            setSpeed("normal");
+        }
         else
             setCurrentPower("error");
     }
 }
+

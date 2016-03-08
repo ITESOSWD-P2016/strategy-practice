@@ -2,8 +2,8 @@ package com.iteso.nintendo;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+import com.iteso.nintendo.Caracteres.Luigi;
 
 /**
  * Created by rvillalobos on 3/3/16.

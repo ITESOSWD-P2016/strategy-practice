@@ -1,17 +1,10 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.Caracteres;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Created by Flaveyro´sDell on 07/03/2016.
  */
-public class Mario extends NintendoCharacter{
+public class Yoshi extends NintendoCharacter{
 
-    public Mario(){
-        setCurrentPower("normal");
-        setName("Mario");
-        setSpeed("normal");
-    }
-
-    @Override
     public String performXButtonAction() {
         return null;
     }
@@ -23,7 +16,18 @@ public class Mario extends NintendoCharacter{
 
     @Override
     public String performAButtonAction() {
-        return "jump";
+
+        if (getCurrentPower() == "fire")
+            return "fireball";
+        else if (getCurrentPower() == "invincibility")
+            return "dash";
+        else if (getCurrentPower() == "normal")
+            return "nothing";
+        else if (getCurrentPower() == "giant")
+            return "superstrength";
+            return "error";
+
+
     }
 
     @Override
@@ -34,6 +38,13 @@ public class Mario extends NintendoCharacter{
             return "dash";
         else if (getCurrentPower() == "normal")
             return "nothing";
+
+        else if (getCurrentPower() == "Hungry")
+            return "Eat Enemy";
+        else if(getCurrentPower() == "Angry")
+            return "EyeLaser";
+
+
         else
             return "error";
     }
@@ -54,6 +65,14 @@ public class Mario extends NintendoCharacter{
         else if(powerItem.toLowerCase() == "clear power"){
             setCurrentPower("normal");
             setSpeed("normal");
+        }
+        else if(powerItem.toLowerCase()=="Hungry"){
+            setCurrentPower("Eat Enemy");
+            setSpeed("Fast");
+        }
+        else if(powerItem.toLowerCase()=="Angry"){
+            setCurrentPower("EyeLaser");
+            setSpeed("Slow");
         }
         else
             setCurrentPower("error");
