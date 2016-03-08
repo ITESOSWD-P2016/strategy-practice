@@ -8,7 +8,10 @@ import com.iteso.nintendo.powers.IPower;
 public class NormalPower implements IPower {
 
 
-    public java.lang.String getAction() {
+    public java.lang.String getAAction() {
+        return "jump";
+    }
+    public java.lang.String getBAction() {
         return "nothing";
     }
 

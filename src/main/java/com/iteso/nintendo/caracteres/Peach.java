@@ -6,16 +6,16 @@ import com.iteso.nintendo.powers.impl.NormalPower;
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Luigi extends NintendoCharacter {
+public class Peach extends NintendoCharacter {
 
     public static void main (String[] args){
-        NintendoCharacter luigi = new Luigi();
-        System.out.println(luigi.getCurrentPower());
+        NintendoCharacter peach = new Peach();
+        System.out.println(peach.getCurrentPower());
     }
 
-    public Luigi(){
+    public Peach(){
         this.setPower(new NormalPower());
-        this.setName("Luigi");
+        this.setName("Peach");
     }
 
     @Override

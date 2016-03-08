@@ -29,11 +29,11 @@ public class Mario extends NintendoCharacter {
 
     @Override
     public String performAButtonAction() {
-        return "jump";
+        return this.getAAction();
     }
 
     @Override
     public String performBButtonAction() {
-        return this.getAction();
+        return this.getBAction();
     }
 }

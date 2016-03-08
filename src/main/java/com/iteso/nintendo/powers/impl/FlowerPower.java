@@ -6,8 +6,11 @@ import com.iteso.nintendo.powers.IPower;
  * Created by luis_ on 04/03/2016.
  */
 public class FlowerPower implements IPower {
-    public java.lang.String getAction() {
+    public java.lang.String getBAction() {
         return "fireball";
+    }
+    public java.lang.String getAAction() {
+        return "Jump & fireball";
     }
 
     public java.lang.String getSpeed() {

@@ -74,7 +74,7 @@ public class MarioTest {
     public void testBActionWhenMarioTakesAMushroom(){
         mario.setPower(new MushroomPower());
 
-        assertEquals("breakbrick", mario.performBButtonAction());
+        assertEquals("nothing", mario.performBButtonAction());
     }
     @Test(expected = NullPointerException.class)
     public void testPowerWhenError(){

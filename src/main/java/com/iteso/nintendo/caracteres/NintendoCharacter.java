@@ -24,8 +24,11 @@ public abstract class NintendoCharacter {
     public String getName() {
         return name;
     }
-    public String getAction() {
-        return power.getAction();
+    public String getBAction() {
+        return power.getBAction();
+    }
+    public String getAAction() {
+        return power.getAAction();
     }
 
     public void setName(String name) {

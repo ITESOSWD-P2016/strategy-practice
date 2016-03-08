@@ -1,22 +1,19 @@
 package com.iteso.nintendo;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import com.iteso.nintendo.caracteres.Luigi;
 import com.iteso.nintendo.powers.impl.FlowerPower;
 import com.iteso.nintendo.powers.impl.MushroomPower;
 import com.iteso.nintendo.powers.impl.NormalPower;
 import com.iteso.nintendo.powers.impl.StarPower;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class LuigiTest {
+public class ToadTest {
     Luigi luigi;
 
     @Before
